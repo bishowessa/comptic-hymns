@@ -1,0 +1,53 @@
+<header class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b-4 border-golden-yellow shadow-md transition-all duration-300">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Top">
+    <div class="w-full flex items-center justify-between h-20">
+      
+      <!-- Logo Section -->
+      <div class="flex items-center">
+        <a href="#" class="flex-shrink-0 flex items-center gap-3 group">
+          <img class="h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105" src="/logo.jpg" alt="Coptic Hymns Academy Logo">
+          <span class="hidden md:block font-serif font-bold text-xl text-royal-red tracking-wide group-hover:text-red-900 transition-colors">
+            Coptic Hymns Academy
+          </span>
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex ml-10 space-x-8 items-center">
+        <a href="#" class="text-base font-medium text-gray-800 hover:text-golden-yellow transition-colors duration-200 font-serif tracking-wide border-b-2 border-transparent hover:border-golden-yellow pb-1">Home</a>
+        <a href="#about" class="text-base font-medium text-gray-800 hover:text-golden-yellow transition-colors duration-200 font-serif tracking-wide border-b-2 border-transparent hover:border-golden-yellow pb-1">About Cantor</a>
+        <a href="#courses" class="text-base font-medium text-gray-800 hover:text-golden-yellow transition-colors duration-200 font-serif tracking-wide border-b-2 border-transparent hover:border-golden-yellow pb-1">Courses</a>
+        
+        <!-- CTA Button -->
+        <a href="#" class="ml-4 inline-flex items-center justify-center px-5 py-2 border-2 border-royal-red text-base font-medium rounded-full text-royal-red bg-transparent hover:bg-royal-red hover:text-white transition-all duration-300 shadow-sm hover:shadow-md">
+          Student Login
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden flex items-center">
+        <button type="button" (click)="toggleMobileMenu()" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-royal-red hover:text-red-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-royal-red transition-colors" aria-expanded="false">
+          <span class="sr-only">Open menu</span>
+          <!-- Icon when menu is closed -->
+          <svg [class.hidden]="isMobileMenuOpen" [class.block]="!isMobileMenuOpen" class="h-7 w-7 block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <!-- Icon when menu is open -->
+          <svg [class.hidden]="!isMobileMenuOpen" [class.block]="isMobileMenuOpen" class="h-7 w-7 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu (Dropdown) -->
+    <div class="md:hidden overflow-hidden transition-all duration-300 ease-in-out" [class.max-h-0]="!isMobileMenuOpen" [class.max-h-96]="isMobileMenuOpen" [class.opacity-0]="!isMobileMenuOpen" [class.opacity-100]="isMobileMenuOpen">
+      <div class="px-2 pt-2 pb-6 space-y-2 bg-white border-t border-gray-100 shadow-inner rounded-b-lg">
+        <a href="#" class="block px-3 py-3 rounded-md text-base font-medium text-gray-900 hover:text-royal-red hover:bg-red-50 transition-colors font-serif">Home</a>
+        <a href="#about" class="block px-3 py-3 rounded-md text-base font-medium text-gray-900 hover:text-royal-red hover:bg-red-50 transition-colors font-serif">About Cantor</a>
+        <a href="#courses" class="block px-3 py-3 rounded-md text-base font-medium text-gray-900 hover:text-royal-red hover:bg-red-50 transition-colors font-serif">Courses</a>
+        <a href="#" class="block px-3 py-3 rounded-md text-base font-medium text-royal-red hover:text-white hover:bg-royal-red transition-colors font-serif font-bold text-center border border-royal-red mt-4 mx-3">Student Login</a>
+      </div>
+    </div>
+  </nav>
+</header>
